@@ -1,5 +1,5 @@
-import { D1DatabaseAdapter, D1PreparedStatement } from './types.js'
-import { DATABASE_SCHEMA, initializeDefaultData } from './schema.js'
+import { D1DatabaseAdapter, D1PreparedStatement } from './types.ts'
+import { DATABASE_SCHEMA, initializeDefaultData } from './schema.ts'
 
 export class D1Adapter implements D1DatabaseAdapter {
   private db: any = null

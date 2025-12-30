@@ -1,4 +1,4 @@
-import { getDatabase } from '../db/index.js'
+import { getDatabase } from '../db/index.ts'
 import { CronJob } from 'cron'
 
 interface BackupConfig {

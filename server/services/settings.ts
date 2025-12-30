@@ -1,4 +1,4 @@
-import db from '../db/index.js'
+import db from '../db/index.ts'
 
 let settingsCache: Record<string, string> = {}
 

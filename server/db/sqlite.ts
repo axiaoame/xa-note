@@ -1,8 +1,8 @@
 import Database from 'better-sqlite3'
 import fs from 'fs'
 import path from 'path'
-import { DatabaseAdapter, PreparedStatement } from './types.js'
-import { DATABASE_SCHEMA, initializeDefaultData } from './schema.js'
+import { DatabaseAdapter, PreparedStatement } from './types.ts'
+import { DATABASE_SCHEMA, initializeDefaultData } from './schema.ts'
 
 export class SQLiteAdapter implements DatabaseAdapter {
   private db: Database.Database | null = null

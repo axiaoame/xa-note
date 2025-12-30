@@ -1,6 +1,6 @@
-import { DatabaseAdapter } from './types.js'
-import { SQLiteAdapter } from './sqlite.js'
-import { D1Adapter } from './d1.js'
+import { DatabaseAdapter } from './types.ts'
+import { SQLiteAdapter } from './sqlite.ts'
+import { D1Adapter } from './d1.ts'
 
 let dbAdapter: DatabaseAdapter | null = null
 

@@ -4,8 +4,8 @@ import { handle } from 'hono/cloudflare-pages'
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie'
 import { nanoid } from 'nanoid'
 import bcrypt from 'bcryptjs'
-import { D1Adapter } from '../../server/db/d1.js'
-import { generateToken, verifyToken, generateSessionId } from '../../server/utils/jwt.js'
+import { D1Adapter } from '../../server/db/d1.ts'
+import { generateToken, verifyToken, generateSessionId } from '../../server/utils/jwt.ts'
 
 type Bindings = {
   DB?: any
@@ -383,7 +383,7 @@ app.get('/api/search', async (c) => {
   }
   
   try {
-    const notes = await db.prepare('SELECT * FROM notes WHERE title LIKE ? OR content LIKE ? ORDER BY updated_at DESC').all(`%${q}%`, `%${q}%`)
+    const notes = await db.prepare('SELECT * FROM notes WHERE title LIKE ? OR content LIKE ? ORDER BY updated_at DESC').all('%' + q + '%', '%' + q + '%')
     return c.json(notes)
   } catch (error) {
     console.error('Search error:', error)

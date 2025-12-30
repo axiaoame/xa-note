@@ -14,8 +14,13 @@
     "noEmit": true,
     "declaration": false,
     "sourceMap": false,
-    "types": ["@cloudflare/workers-types"],
-    "lib": ["ES2022", "WebWorker"]
+    "types": [
+      "@cloudflare/workers-types"
+    ],
+    "lib": [
+      "ES2022",
+      "WebWorker"
+    ]
   },
   "include": [
     "functions/**/*.ts",

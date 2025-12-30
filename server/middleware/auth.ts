@@ -1,6 +1,6 @@
 import { getCookie, deleteCookie } from 'hono/cookie'
 import type { MiddlewareHandler } from 'hono'
-import { verifyToken } from '../utils/jwt.js'
+import { verifyToken } from '../utils/jwt.ts'
 
 export const requireAuth: MiddlewareHandler = async (c, next) => {
   const token = getCookie(c, 'auth_token')
