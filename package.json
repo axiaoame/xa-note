@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "XA Note - Cloudflare Pages Deployment",
   "type": "module",
+  "scripts": {
+    "build": "echo 'Using pre-built files'",
+    "pages:build": "echo 'Using pre-built files'"
+  },
   "dependencies": {
     "hono": "^4.3.1",
-    "nanoid": "^5.0.7",
-    "blueimp-md5": "^2.19.0"
+    "nanoid": "^5.0.7"
   },
   "devDependencies": {
-    "@types/blueimp-md5": "^2.18.2",
-    "@cloudflare/workers-types": "^4.20241218.0",
+    "@cloudflare/workers-types": "^4.20251231.0",
     "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

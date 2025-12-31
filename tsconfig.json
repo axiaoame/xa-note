@@ -23,8 +23,7 @@
     ]
   },
   "include": [
-    "functions/**/*.ts",
-    "server/**/*.ts"
+    "functions/**/*.ts"
   ],
   "exclude": [
     "node_modules",
