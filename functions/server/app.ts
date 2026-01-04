@@ -1260,7 +1260,6 @@ app.post('/api/notes', requireAuth, async (c) => {
 
 app.put('/api/notes/:id', requireAuth, async (c) => {
   const db = c.get('db') as any
-  const user = c.get('user')
   const id = c.req.param('id')
   if (!id) return c.json({ error: 'BAD_REQUEST' }, 400)
 
@@ -1283,21 +1282,6 @@ app.put('/api/notes/:id', requireAuth, async (c) => {
     Date.now(),
     id
   )
-
-  // 记录笔记更新
-  await logAction(db, {
-    user_id: user.email || user.userId,
-    action: 'update_note',
-    target_type: 'note',
-    target_id: id,
-    details: { 
-      title: note.title,
-      category_id: note.category_id,
-      tags_count: note.tags?.length || 0
-    },
-    ip_address: c.req.header('cf-connecting-ip') || c.req.header('x-forwarded-for') || 'unknown',
-    user_agent: c.req.header('user-agent') || 'unknown'
-  })
 
   return c.json({ ok: true })
 })
