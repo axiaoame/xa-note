@@ -70,32 +70,30 @@ Manually copy and paste the contents of `d1-init.sql` (*6 tables*) into the D1 c
 wrangler d1 execute xa-note-db --file=d1-init.sql
 ```
 
-#### Step 4: Create a Cloudflare Pages Project
-1. Go to **Cloudflare Dashboard** > **Pages** > **Create a project**
+#### Step 4: Create the Project
+1. Go to **Cloudflare Dashboard** > **Workers & Pages** > **Create application** > **Deploy a Pages project? Get started**
 2. Connect your Git repository
-3. Configure **Build Settings**:
+3. Configure **Build settings**:
    - **Framework preset**: `None`
    - **Build command**: `npm install`
-   - **Build output directory**: `.`
-   - **Root directory**: `/`
-   - **Node.js version**: `18` or higher
+   - **Build output directory**: `.` (current directory)
+   - **Root directory**: `/` (repository root)
 
-#### Step 5: Configure Environment Variables
-1. Go to **Cloudflare Dashboard** > **Pages** > **Your Project**
-2. Navigate to **Settings** > **Environment variables**
-3. Add **Production** variables (optional but recommended):
-   - `JWT_SECRET`: Your secure JWT secret (32+ characters)
-   - `NODE_ENV`: `production`
-4. Go to **Settings** > **Functions**
-5. Add **D1 Database Binding**:
+#### Step 5: Configure Environment Bindings (via Dashboard)
+1. Go to **Cloudflare Dashboard** > **Workers & Pages** > **xa-note**
+2. Navigate to **Settings** > **Bindings**
+3. Add a **D1 Database** binding:
    - **Variable name**: `DB`
    - **D1 Database**: `xa-note-db`
-6. go to **Deployment** > **All deployments**, the latest deployment .. ` retry deployment ` (after binding the d1 database, it must be redeployed)）
+4. Go to **Deployments** > **All deployments**, find the latest deployment, and click **Redeploy**  
+   *(Note: After binding a D1 database, you must trigger a new deployment for the binding to take effect)*
 
-#### Step 6: Post-Deployment Setup
-1. **Visit your site**: `https://your-project.pages.dev` or your custom domain
-2. **Complete setup**: Follow the installation wizard
-3. **Start using**: Create your first note!
+#### Step 6: Post-Deployment Steps
+
+1. **Visit your site**: `https://your-project.pages.dev`
+2. **Custom domain**: Configure a custom domain if desired
+3. **Complete setup**: Follow the onboarding wizard
+4. **Start using**: Create your first note!
 
 ---
 

@@ -69,23 +69,18 @@ wrangler d1 execute xa-note-db --file=d1-init.sql
 ```
 
 #### 步骤 4: 创建项目
-1. 前往 **Cloudflare 控制台** > **Pages** > **创建项目**
+1. 前往 **Cloudflare 控制台** > **Workers和Pages** > **创建应用程序** > **想要部署 Pages？开始使用**
 2. 连接你的 Git 仓库
 3. 配置 **构建设置**：
    - **框架预设**: `None`
    - **构建命令**: `npm install`
    - **构建输出目录**: `.`（当前目录）
    - **根目录**: `/`（仓库根目录）
-   - **Node.js 版本**: `18` 或更高
 
 #### 步骤 5: 配置环境变量（控制台）
-1. 前往 **Cloudflare 控制台** > **Pages** > **xa-note**
-2. 导航到 **设置** > **环境变量**
-3. 添加 **生产环境** 变量（可选）：
-   - `JWT_SECRET`: 你的安全 JWT 密钥（32+ 字符）
-   - `NODE_ENV`: `production`
-4. 前往 **设置** > **Functions**
-5. 添加 **D1 数据库绑定**：
+1. 前往 **Cloudflare 控制台** > **Workers和Pages** > **xa-note**
+2. 前往 **设置** > **绑定** 
+5. 添加 **D1数据库**：
    - **变量名**: `DB`
    - **D1 数据库**: `xa-note-db`
 6. 导航到 **部署** > **所有部署**，最新的部署... `重试部署`（d1数据库绑定后必须重新部署）
@@ -93,7 +88,8 @@ wrangler d1 execute xa-note-db --file=d1-init.sql
 
 #### 步骤 6: 部署后操作
 
-1. **访问你的站点**: `https://your-project.pages.dev` 或绑定你自己的域名
+1. **访问你的站点**: `https://your-project.pages.dev`
+2. **自定义域**：设置自定义域
 2. **完成设置**: 按照安装向导操作
 3. **开始使用**: 创建你的第一个笔记！
 
