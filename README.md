@@ -1,6 +1,6 @@
-# XA Note
+中文 | [English](README_EN.md)
 
-[English](README_EN.md) | 中文
+# XA Note
 
 XA Note 是一款**轻量级、可完全自托管的个人笔记系统**，由您自行部署和管理，专为注重**隐私、安全与可控性**的用户设计。系统支持 Markdown 编辑、分类管理、标签系统和全文检索，提供流畅的写作体验与清晰的知识结构。
 
@@ -73,7 +73,7 @@ wrangler d1 execute xa-note-db --file=d1-init.sql
 2. 连接你的 Git 仓库
 3. 配置 **构建设置**：
    - **框架预设**: `None`
-   - **构建命令**: 留空
+   - **构建命令**: `npm install`
    - **构建输出目录**: `.`（当前目录）
    - **根目录**: `/`（仓库根目录）
    - **Node.js 版本**: `18` 或更高

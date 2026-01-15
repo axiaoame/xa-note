@@ -1,4 +1,3 @@
-
 [中文](README.md) | Endlish
 
 # XA Note
@@ -76,7 +75,7 @@ wrangler d1 execute xa-note-db --file=d1-init.sql
 2. Connect your Git repository
 3. Configure **Build Settings**:
    - **Framework preset**: `None`
-   - **Build command**: *Leave empty*
+   - **Build command**: `npm install`
    - **Build output directory**: `.`
    - **Root directory**: `/`
    - **Node.js version**: `18` or higher
